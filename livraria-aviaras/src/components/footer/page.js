@@ -21,7 +21,11 @@ export default function Footer() {
                 <div className={styles.footerSection}>
                     <h3>Redes Sociais</h3>
                     <p>
+<<<<<<< HEAD
                         <a href="https://www.facebook.com/seu-perfil" target="_blank" rel="noopener noreferrer">
+=======
+                         <a href="https://www.facebook.com/seu-perfil" target="_blank" rel="noopener noreferrer">
+>>>>>>> 6cc68c78c854d500e1e65a75da7c29208e623d2c
                             Facebook
                         </a> 
                         |

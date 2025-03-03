@@ -4,7 +4,7 @@ const pool = msyql.createPool({
     host: 'localhost',
     user: 'aviaras',
     password: '12345Aviaras',
-    database: 'bancaviaras'
+    database: 'bancoaviaras'
 })
 
 export default pool
