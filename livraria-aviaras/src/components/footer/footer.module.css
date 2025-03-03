@@ -31,8 +31,15 @@
   .footerSection p {
     font-size: 14px;
     line-height: 1.6;
+    
   }
   
+
+  .footerSection a {
+    margin: 5px;
+    
+  }
+
   .copy {
     width: 100%;  /* Garante que o texto ocupe toda a largura disponível */
     text-align: center;  /* Centraliza o texto */
