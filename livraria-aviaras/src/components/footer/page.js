@@ -21,7 +21,7 @@ export default function Footer() {
                 <div className={styles.footerSection}>
                     <h3>Redes Sociais</h3>
                     <p>
-                        {/* <a href="https://www.facebook.com/seu-perfil" target="_blank" rel="noopener noreferrer">
+                         <a href="https://www.facebook.com/seu-perfil" target="_blank" rel="noopener noreferrer">
                             Facebook
                         </a> 
                         | 
@@ -31,7 +31,7 @@ export default function Footer() {
                         | 
                         <a href="https://twitter.com/seu-perfil" target="_blank" rel="noopener noreferrer">
                             Twitter
-                        </a> */}
+                        </a>
                     </p>
                 </div>
             </div>
