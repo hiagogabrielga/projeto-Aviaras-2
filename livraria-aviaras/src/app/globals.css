@@ -16,7 +16,14 @@ body {
   overflow-x: hidden;
 }
 
-
+body{
+  border: none; /* Remove a borda */
+  outline: none; /* Remove o contorno ao focar */
+  -webkit-appearance: none; /* Remove estilos padrão do Safari */
+  -moz-appearance: none; /* Remove estilos padrão do Firefox */
+  appearance: none; /* Remove estilos padrão do navegador */
+  background-color: transparent; /* Remove fundo padrão, se necessário */
+}
 
 body {
   color: var(--foreground);
