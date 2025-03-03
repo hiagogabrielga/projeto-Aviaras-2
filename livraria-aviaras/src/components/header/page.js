@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './Header.module.css'; // Importando estilos CSS Modules
+import styles from './header.module.css'; // Importando estilos CSS Modules
 import Image from "next/image";
 import { FaCircleUser, FaBookmark } from "react-icons/fa6";
 
