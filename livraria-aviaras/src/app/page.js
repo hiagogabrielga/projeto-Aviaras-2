@@ -38,7 +38,7 @@ export default function Home() {
             <SwiperSlide>
               <div className={styles.slide}>
                 <Image
-                  src="/images/jojo.jpg"
+                  src="/images/sasuke.jpg"
                   alt="Livro 1"
                   width={200}
                   height={300}
@@ -50,7 +50,7 @@ export default function Home() {
             <SwiperSlide>
               <div className={styles.slide}>
                 <Image
-                  src="/images/naruto.png"
+                  src="/images/sasuke.jpg"
                   alt="Livro 2"
                   width={200}
                   height={300}

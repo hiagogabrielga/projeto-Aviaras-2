@@ -1,69 +1,111 @@
 /* page.module.css */
 
 .mae {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Garante que ocupe toda a altura da tela */
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+}
+
+.container {
+  width: 50%; /* Ocupa 50% da largura da tela */
+  max-width: 800px; /* Limita a largura máxima */
+  background-color: #837060;
+  min-height: 580px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: flex-start; /* Alinha o conteúdo no topo */
+  margin: 50px auto; /* Centraliza o container na página */
+  padding-top: 10px; /* Espaço no topo */
+}
+
+.famosos {
+  background-color: white;
+  max-height: 50px;
+  width: 40%; /* Ajusta a largura */
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto */
+  margin-top: 20px; /* Espaço no topo */
+  padding: 10px; /* Espaçamento interno */
+  font-size: 18px; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  color: #333; /* Cor do texto */
+}
+
+.carrosel {
+  width: 90%; /* Largura do carrossel */
+  margin-top: 20px; /* Espaço acima do carrossel */
+  padding-bottom: 20px; /* Espaço abaixo do carrossel */
   
-  .container {
-    width: 50%; /* Ocupa 50% da largura da tela */
-    max-width: 800px; /* Limita a largura máxima */
-    background-color: #837060;
-    min-height: 600px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: flex-start; /* Alinha o conteúdo no topo */
-    margin: 50px auto; /* Centraliza o container na página */
-    padding-top: 20px; /* Espaço no topo */
-  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff; /* Fundo branco para os slides */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 20px; /* Espaçamento interno */
   
-  .famosos {
-    background-color: white;
-    max-height: 50px;
-    width: 40%; /* Ajusta a largura */
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centraliza o texto */
-    margin-top: 20px; /* Espaço no topo */
-    padding: 10px; /* Espaçamento interno */
-    font-size: 18px; /* Tamanho da fonte */
-    font-weight: bold; /* Texto em negrito */
-    color: #333; /* Cor do texto */
-  }
+}
+
+.slide img {
+  border-radius: 10px; /* Bordas arredondadas para a imagem */
+  width: 100%; /* Largura da imagem */
+  max-width: 200px; /* Largura máxima da imagem */
+  height: 40vh; /* Altura automática */
   
-  .carrosel {
-    width: 90%; /* Largura do carrossel */
-    margin-top: 20px; /* Espaço acima do carrossel */
-    padding-bottom: 20px; /* Espaço abaixo do carrossel */
-  }
-  
-  .slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #fff; /* Fundo branco para os slides */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-  }
-  
-  .slide img {
-    border-radius: 10px; /* Bordas arredondadas para a imagem */
-    width: 100%; /* Largura da imagem */
-    max-width: 200px; /* Largura máxima da imagem */
-    height: auto; /* Altura automática */
-  }
-  
-  .slide p {
-    margin-top: 10px; /* Espaço acima do texto */
-    font-size: 16px; /* Tamanho da fonte */
-    color: #333; /* Cor do texto */
-    font-weight: bold; /* Texto em negrito */
-  }
-  
+}
+
+.slide p {
+  margin-top: 10px; /* Espaço acima do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #333; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  margin-bottom: 20px;
+}
+
+/* Estilos personalizados para o Swiper */
+
+/* Bolinhas de paginação */
+.carrosel :global(.swiper-pagination-bullet) {
+  background-color: #ccc; /* Cor das bolinhas inativas */
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  margin: 0 8px !important; /* Espaçamento entre as bolinhas */
+}
+
+.carrosel :global(.swiper-pagination-bullet-active) {
+  background-color: #000000; /* Cor da bolinha ativa */
+}
+
+/* Setas de navegação */
+.carrosel :global(.swiper-button-prev),
+.carrosel :global(.swiper-button-next) {
+  color: #000000; /* Cor das setas */
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo das setas */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.carrosel :global(.swiper-button-prev:hover),
+.carrosel :global(.swiper-button-next:hover) {
+  background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo ao passar o mouse */
+  color: #fff; /* Cor das setas ao passar o mouse */
+}
+
+.carrosel :global(.swiper-button-prev::after),
+.carrosel :global(.swiper-button-next::after) {
+  font-size: 20px; /* Tamanho do ícone das setas */
+}
