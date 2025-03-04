@@ -10,14 +10,16 @@
   width: 50%; /* Ocupa 50% da largura da tela */
   max-width: 800px; /* Limita a largura máxima */
   background-color: #837060;
-  min-height: 580px;
+  min-height: 600px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center; /* Centraliza horizontalmente */
   justify-content: flex-start; /* Alinha o conteúdo no topo */
   margin: 50px auto; /* Centraliza o container na página */
-  padding-top: 10px; /* Espaço no topo */
+  padding-top: 20px; /* Espaço no topo */
+  position: relative; /* Permite posicionar elementos filhos corretamente */
+  z-index: 1; /* Garante que o container fique acima das bolinhas e setas */
 }
 
 .famosos {
@@ -38,41 +40,100 @@
 .carrosel {
   width: 90%; /* Largura do carrossel */
   margin-top: 20px; /* Espaço acima do carrossel */
-  padding-bottom: 20px; /* Espaço abaixo do carrossel */
-  
+  padding-bottom: 50px; /* Espaço abaixo do carrossel para as bolinhas */
+  position: relative; /* Permite posicionar as setas e bolinhas corretamente */
+  z-index: 2; /* Garante que o carrossel fique acima do container */
 }
 
-.slide {
+/* Estilo do card */
+.card {
+  display: flex;
+  background: linear-gradient(to bottom, #FAF9E9 50%, #837060 50%); /* Duas cores */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  overflow: hidden; /* Garante que as bordas arredondadas sejam respeitadas */
+  height: 400px; /* Altura fixa do card */
+  border: solid 1px black;
+}
+
+/* Estilo das informações (lado esquerdo) */
+.info {
+  margin-top: 180px;
+  flex: 1; /* Ocupa o espaço restante */
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  margin-left: 20px; /* Espaço à esquerda */
+}
+
+/* Estilo do título */
+.title {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  width: 100%; /* Ocupa a largura total */
+  display: flex; /* Alinha o rótulo e o conteúdo horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.title p {
+  font-size: 15px;
+  margin: 0; /* Remove margens padrão */
+  margin-left: 10px; /* Espaço entre o rótulo e o conteúdo */
+}
+
+/* Estilo da descrição */
+.description {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  width: 100%; /* Ocupa a largura total */
+  display: flex; /* Alinha o rótulo e o conteúdo horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.description p {
+  font-size: 14px;
+  margin: 0; /* Remove margens padrão */
+  margin-left: 10px; /* Espaço entre o rótulo e o conteúdo */
+}
+
+/* Estilo da categoria */
+.category {
+  font-size: 14px;
+  color: #ffffff;
+  font-style: italic;
+  width: 100%; /* Ocupa a largura total */
+}
+
+/* Estilo da imagem (lado direito) */
+.imageContainer {
+  margin-top: 55px;
+  margin-right: 55px;
+  width: 200px; /* Largura fixa para a imagem */
+  max-height: 33vh; /* Altura total do card */
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  background-color: #fff; /* Fundo branco para os slides */
-  border-radius: 10px; /* Bordas arredondadas */
-  padding: 20px; /* Espaçamento interno */
-  
 }
 
-.slide img {
+.imageContainer img {
   border-radius: 10px; /* Bordas arredondadas para a imagem */
-  width: 100%; /* Largura da imagem */
-  max-width: 200px; /* Largura máxima da imagem */
-  height: 40vh; /* Altura automática */
-  
-}
-
-.slide p {
-  margin-top: 10px; /* Espaço acima do texto */
-  font-size: 16px; /* Tamanho da fonte */
-  color: #333; /* Cor do texto */
-  font-weight: bold; /* Texto em negrito */
-  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  max-height: 100%; /* Garante que a imagem não ultrapasse o card */
 }
 
 /* Estilos personalizados para o Swiper */
 
-/* Bolinhas de paginação */
+/* Bolinhas de paginação (fora do card) */
+.carrosel :global(.swiper-pagination) {
+  bottom: 10px !important; /* Posiciona as bolinhas abaixo do card */
+  z-index: 3; /* Garante que as bolinhas fiquem acima de outros elementos */
+}
+
 .carrosel :global(.swiper-pagination-bullet) {
   background-color: #ccc; /* Cor das bolinhas inativas */
   opacity: 1;
@@ -85,11 +146,11 @@
   background-color: #000000; /* Cor da bolinha ativa */
 }
 
-/* Setas de navegação */
+/* Setas de navegação (fora do card) */
 .carrosel :global(.swiper-button-prev),
 .carrosel :global(.swiper-button-next) {
-  color: #000000; /* Cor das setas */
-  background-color: rgba(255, 255, 255, 0.8); /* Fundo das setas */
+  color: #ffffff; /* Cor das setas */
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo das setas */
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -97,15 +158,59 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
+  position: absolute; /* Permite posicionar as setas fora do card */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta o posicionamento vertical */
+  z-index: 4; /* Garante que as setas fiquem acima de outros elementos */
+}
+
+.carrosel :global(.swiper-button-prev) {
+  margin-left: -5px; /* Posiciona a seta esquerda fora do card */
+}
+
+.carrosel :global(.swiper-button-next) {
+  right: 3px; /* Posiciona a seta direita fora do card */
 }
 
 .carrosel :global(.swiper-button-prev:hover),
 .carrosel :global(.swiper-button-next:hover) {
-  background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo ao passar o mouse */
-  color: #fff; /* Cor das setas ao passar o mouse */
+  background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo ao passar o mouse */
+  color: #000000; /* Cor das setas ao passar o mouse */
 }
 
 .carrosel :global(.swiper-button-prev::after),
 .carrosel :global(.swiper-button-next::after) {
   font-size: 20px; /* Tamanho do ícone das setas */
+}
+
+
+/* Estilos da segunda parte */
+.segundaParte {
+  width: 100%;
+  max-width: 1200px; /* Limita a largura máxima */
+  margin: 20px auto; /* Centraliza na página */
+  padding: 20px; /* Espaçamento interno */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Garante 4 colunas */
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Cada item ocupa uma célula do grid */
+.divItem {
+  height: 42vh;
+  background: linear-gradient(to bottom, #FAF9E9 60%, #837060 50%); /* Duas cores */
+  border: 1px solid #837060; /* Borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 10px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #333; /* Cor do texto */
+}
+
+/* Ajuste na imagem */
+.divItem img {
+  width: 45%; /* A imagem ocupa 45% da largura da div */
+  height: 23vh; /* Altura fixa para a imagem */
+  border-radius: 10px; /* Bordas arredondadas para a imagem */
+  margin-bottom: 10px; /* Espaço abaixo da imagem */
 }
