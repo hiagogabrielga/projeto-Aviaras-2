@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from './header.module.css'; // Importando estilos CSS Modules
 import Image from "next/image";
 import { FaCircleUser, FaBookmark } from "react-icons/fa6";
+import { IoSearchOutline } from "react-icons/io5";
 
 
 export default function Header() {
@@ -12,6 +13,7 @@ export default function Header() {
       </div>
       <div className={styles.searchBar}>
         <input type="text" placeholder="Pesquise um livro..." />
+        <IoSearchOutline />
       </div>
       <nav className={styles.nav}>             
             <div className={styles.favoritos}>

@@ -5,6 +5,7 @@
   height: 92px;
   background-color: #794f44;
   color: #fff;
+  position: relative; /* Adicionado para posicionar elementos filhos absolutos */
 }
 
 .logo {
@@ -20,15 +21,26 @@
   flex: 1; /* Ocupa o espaço restante */
   max-width: 400px; /* Limita a largura da barra de busca */
   margin: auto;
+  position: relative; /* Adicionado para posicionar a lupa */
 }
 
 .searchBar input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 2.5rem 0.5rem 1rem; /* Aumenta o padding à direita para a lupa */
   border: none;
   border-radius: 10px;
   outline: none;
   margin: auto;
+  font-size: 16px; /* Tamanho da fonte */
+}
+
+.searchBar svg {
+  position: absolute;
+  right: 1rem; /* Posiciona a lupa à direita */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta o posicionamento vertical */
+  color: #000000; /* Cor da lupa */
+  cursor: pointer;
 }
 
 .nav {
@@ -50,14 +62,9 @@
   cursor: pointer;
 }
 
-
-
-
-
-
 .favoritos:hover,
 .perfil:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  color:#b9887c ;
+  color: #b9887c;
 }

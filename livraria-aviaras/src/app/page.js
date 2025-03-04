@@ -1,37 +1,78 @@
-'use client'
+'use client';
 import Image from "next/image";
-import styles from "./page.module.css";
 import Footer from "@/components/footer/page";
 import Header from "@/components/header/page";
+import './globals.css';
+
+// Importações do Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Header/>
-      {/* Banner Principal */}
-      <section className={styles.banner}>
-        <h1>Bem-vindo à Nossa Livraria</h1>
-        <p>Encontre os melhores livros com os melhores preços!</p>
-      </section>
+    <div className={styles.mae}>
+      <Header />
+      <div className={styles.container}>
+        <div className={styles.famosos}>
+          <p>Os 5 livros mais famosos</p>
+        </div>
 
-      {/* Destaques */}
-      <section className={styles.destaques}>
-        <h2>Destaques</h2>
-        {/* Lista de livros em destaque */}
-      </section>
-
-      {/* Categorias */}
-      <section className={styles.categorias}>
-        <h2>Categorias</h2>
-        {/* Carrossel ou lista de categorias */}
-      </section>
-
-      {/* Mais Vendidos */}
-      <section className={styles.maisVendidos}>
-        <h2>Mais Vendidos</h2>
-        {/* Lista de livros mais vendidos */}
-      </section>
-      <Footer/>
+        <div className={styles.carrosel}>
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]} // Módulos do Swiper
+            spaceBetween={30} // Espaço entre os slides
+            slidesPerView={1} // Número de slides visíveis
+            navigation // Botões de navegação
+            pagination={{ clickable: true }} // Bolinhas de paginação
+            loop={true} // Loop infinito
+            autoplay={{
+              delay: 6000, // 6 segundos
+              disableOnInteraction: false, // Continua o autoplay após interação
+            }}
+          >
+            <SwiperSlide>
+              <div className={styles.slide}>
+                <Image
+                  src="/images/jojo.jpg"
+                  alt="Livro 1"
+                  width={200}
+                  height={300}
+                  priority // Prioriza o carregamento da primeira imagem
+                />
+                <p>Livro 1</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.slide}>
+                <Image
+                  src="/images/naruto.png"
+                  alt="Livro 2"
+                  width={200}
+                  height={300}
+                />
+                <p>Livro 2</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.slide}>
+                <Image
+                  src="/images/sasuke.jpg"
+                  alt="Livro 3"
+                  width={200}
+                  height={300}
+                />
+                <p>Livro 3</p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }
