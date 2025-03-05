@@ -157,7 +157,7 @@ export default function Home() {
                         className={styles.img}
                         src={item.imagem}
                         alt={`Livro_${index + 1}`}
-                        width={150}
+                        width={190}
                         height={300}
                         style={index == 1 ? { priority: true } : {}}
                       />
@@ -175,10 +175,10 @@ export default function Home() {
             imagensHome.map((item, index) => (
               <div key={index} className={styles.divItem}>
                 <Image
-                  className={styles.img}
+                  className={styles.imgCard}
                   src={item.imagem} // Adicione o caminho da imagem
                   alt={`Imagem_${index + 1}`} // Adicione um texto alternativo
-                  width={150}
+                  width={190}
                   height={300}
                 />
                 <p>Div {index + 1}</p>

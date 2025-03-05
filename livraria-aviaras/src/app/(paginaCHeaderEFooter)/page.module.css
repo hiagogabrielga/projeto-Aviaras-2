@@ -209,11 +209,9 @@
   color: #333; /* Cor do texto */
 }
 
-/* Ajuste na imagem */
-.divItem img {
-  width: 45%; /* A imagem ocupa 45% da largura da div */
-  height: 23vh; /* Altura fixa para a imagem */
+.imgCard{
   border-radius: 10px; /* Bordas arredondadas para a imagem */
   margin-bottom: 10px; /* Espaço abaixo da imagem */
+  max-height: 100%;
+  object-fit: cover; /* Ajusta a imagem ao tamanho do contêiner sem distorção */
 }
-
