@@ -3,8 +3,13 @@
   justify-content: space-between; /* Alinha os itens nas extremidades */
   align-items: center; /* Centraliza verticalmente */
   height: 92px;
+  /*
   background-color: #794f44;
   color: #fff;
+  */
+  background-color: var(--marromEscuro);
+  color:  var(--bege);
+
   position: relative; /* Adicionado para posicionar elementos filhos absolutos */
 }
 
@@ -66,5 +71,4 @@
 .perfil:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  color: #b9887c;
 }

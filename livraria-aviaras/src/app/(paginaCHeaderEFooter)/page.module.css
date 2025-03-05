@@ -9,8 +9,8 @@
 .container {
   width: 50%; /* Ocupa 50% da largura da tela */
   max-width: 800px; /* Limita a largura máxima */
-  background-color: #837060;
-  min-height: 600px;
+  background-color: var(--marromClaro);
+  min-height: 570px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -38,22 +38,23 @@
 }
 
 .carrosel {
-  width: 90%; /* Largura do carrossel */
+  width: 100%; /* Largura do carrossel */
   margin-top: 20px; /* Espaço acima do carrossel */
-  padding-bottom: 50px; /* Espaço abaixo do carrossel para as bolinhas */
   position: relative; /* Permite posicionar as setas e bolinhas corretamente */
   z-index: 2; /* Garante que o carrossel fique acima do container */
+  padding-bottom: 20px;
 }
 
 /* Estilo do card */
 .card {
   display: flex;
-  background: linear-gradient(to bottom, #FAF9E9 50%, #837060 50%); /* Duas cores */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-  overflow: hidden; /* Garante que as bordas arredondadas sejam respeitadas */
-  height: 400px; /* Altura fixa do card */
-  border: solid 1px black;
+  background: linear-gradient(to bottom, var(--creme) 50%, var(--marromClaro) 50%);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  border: none;
+  height: 400px;
+  margin: 15px 50px 30px;
 }
 
 /* Estilo das informações (lado esquerdo) */
@@ -129,7 +130,7 @@
 
 /* Bolinhas de paginação (fora do card) */
 .carrosel :global(.swiper-pagination) {
-  bottom: 10px !important; /* Posiciona as bolinhas abaixo do card */
+  bottom: 0 !important; /* Posiciona as bolinhas abaixo do card */
   z-index: 3; /* Garante que as bolinhas fiquem acima de outros elementos */
 }
 
@@ -164,11 +165,13 @@
 }
 
 .carrosel :global(.swiper-button-prev) {
-  margin-left: -5px; /* Posiciona a seta esquerda fora do card */
+  left: 0; /* Posiciona a seta esquerda fora do card */
+  margin-left: 5px;
 }
 
 .carrosel :global(.swiper-button-next) {
-  right: 3px; /* Posiciona a seta direita fora do card */
+  right: 0; /* Posiciona a seta direita fora do card */
+  margin-right: 5px;
 }
 
 .carrosel :global(.swiper-button-prev:hover),
