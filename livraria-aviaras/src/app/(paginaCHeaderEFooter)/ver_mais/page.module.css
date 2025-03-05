@@ -1,0 +1,70 @@
+.container1 {
+    max-width: 45vw;
+    border-radius: 15px;
+    background-color: #685648;
+    height: 68vh;
+    margin-top: 40px;
+    margin-left: 50px;
+    padding: 20px; /* Adicionado para espaçamento interno */
+}
+
+.parte1 {
+    
+    padding-left: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo{
+    
+    
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.image {
+    display: flex;
+    gap: 20px; /* Espaçamento entre as imagens menores e a principal */
+}
+
+.imgs {
+    margin-left: 20px;
+    width: 8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre as imagens menores */
+}
+
+.im_P {
+    flex: 2; /* A imagem principal ocupa mais espaço */
+    background-color: #faf9e9; /* Cor de fundo da imagem principal */
+    border-radius: 18px; /* Borda arredondada */
+    height: 56vh; /* Altura da imagem principal */
+}
+
+.img_P{
+    display: flex;
+    margin: 13px auto;
+}
+.im1, .im2, .im3 {
+    border-radius: 18px;
+    height: 17vh;
+    background-color: #faf9e9;
+}
+
+.img1{
+    display: flex;
+    margin: 15px auto;
+}
+
+
+@media (max-width: 768px) {
+    .image {
+        flex-direction: column;
+    }
+    .img_P {
+        margin-top: 20px;
+    }
+}

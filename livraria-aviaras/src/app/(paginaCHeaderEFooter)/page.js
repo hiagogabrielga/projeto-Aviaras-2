@@ -183,7 +183,7 @@ export default function Home() {
                 />
                 <h3>Diário da Banana {index + 1}</h3>
                 <p className={styles.desc}>adadadadadadsadadaaadasdadadasadasadadadadadasss</p>
-                <p className={styles.mais}>Ver mais</p>
+                <p className={styles.mais}> <a href="./ver_mais"> Ver mais</a></p>
               </div>
             ))
           }

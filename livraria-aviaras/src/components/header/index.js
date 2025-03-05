@@ -20,7 +20,8 @@ export default function Header() {
               <FaBookmark size={30} />
             </div>
             <div className={styles.perfil}>
-              <FaCircleUser size={40} />
+              <a href="/login"><FaCircleUser size={40} /></a>
+              
             </div>
       </nav>
     </header>
