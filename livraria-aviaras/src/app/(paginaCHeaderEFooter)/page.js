@@ -181,7 +181,9 @@ export default function Home() {
                   width={190}
                   height={300}
                 />
-                <p>Div {index + 1}</p>
+                <h3>Diário da Banana {index + 1}</h3>
+                <p className={styles.desc}>adadadadadadsadadaaadasdadadasadasadadadadadasss</p>
+                <p className={styles.mais}>Ver mais</p>
               </div>
             ))
           }
