@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import styles from "./page.module.css";
+import Link from "next/link";
 
 const imagensSlide = [
   {
@@ -183,7 +184,7 @@ export default function Home() {
                 />
                 <h3>Diário da Banana {index + 1}</h3>
                 <p className={styles.desc}>adadadadadadsadadaaadasdadadasadasadadadadadasss</p>
-                <p className={styles.mais}> <a href="./ver_mais"> Ver mais</a></p>
+                <p className={styles.mais}> <Link href="./ver_mais"> Ver mais</Link></p>
               </div>
             ))
           }
