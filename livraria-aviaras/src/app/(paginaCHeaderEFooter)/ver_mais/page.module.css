@@ -1,23 +1,28 @@
+.mae {
+    display: flex;
+    gap: 360px; /* Espaçamento entre container1 e container2 */
+    padding: 5px; /* Espaçamento externo */
+}
+
 .container1 {
     max-width: 45vw;
     border-radius: 15px;
     background-color: #685648;
-    height: 68vh;
+    height: auto;
+    max-height: 100vh;
     margin-top: 40px;
     margin-left: 50px;
-    padding: 20px; /* Adicionado para espaçamento interno */
+    padding: 20px;
+    overflow-y: hidden;
 }
 
 .parte1 {
-    
     padding-left: 25px;
     display: flex;
     justify-content: space-between;
 }
 
-.titulo{
-    
-    
+.titulo {
     color: white;
     font-size: 28px;
     font-weight: bold;
@@ -26,7 +31,7 @@
 
 .image {
     display: flex;
-    gap: 20px; /* Espaçamento entre as imagens menores e a principal */
+    gap: 20px;
 }
 
 .imgs {
@@ -34,37 +39,316 @@
     width: 8vw;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espaçamento entre as imagens menores */
+    gap: 20px;
 }
 
 .im_P {
-    flex: 2; /* A imagem principal ocupa mais espaço */
-    background-color: #faf9e9; /* Cor de fundo da imagem principal */
-    border-radius: 18px; /* Borda arredondada */
-    height: 56vh; /* Altura da imagem principal */
+    flex: 2;
+    background-color: #faf9e9;
+    border-radius: 18px;
+    height: 56vh;
 }
 
-.img_P{
+.img_P {
     display: flex;
     margin: 13px auto;
 }
+
 .im1, .im2, .im3 {
     border-radius: 18px;
     height: 17vh;
     background-color: #faf9e9;
 }
 
-.img1{
+.img1 {
     display: flex;
     margin: 15px auto;
 }
 
+.sobre {
+    margin-left: 20px;
+    margin-top: 1.5vh;
+    display: flex;
+    gap: 1vw;
+}
 
-@media (max-width: 768px) {
-    .image {
-        flex-direction: column;
-    }
-    .img_P {
-        margin-top: 20px;
-    }
+.autor, .postado {
+    border-radius: 23px;
+    background-color: #C2AA8B;
+    min-width: 13vw;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Alinha o ícone e os textos verticalmente */
+    gap: 20px; /* Espaçamento entre o ícone e os textos */
+    padding-right: 40px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+}
+
+.textos {
+    display: flex;
+    flex-direction: column; /* Coloca os textos em uma coluna */
+    gap: 5px; /* Espaçamento entre os textos */
+}
+
+.obras {
+    display: flex;
+    justify-content: flex-start; /* Alinha o texto à esquerda */
+}
+
+.ver_obras {
+    color: white;
+    margin: 0;
+    font-size: 12px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.postado_p, .autor_p {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+}
+
+.categoria {
+    display: flex;
+    margin-top: 1vh;
+    margin-left: 20px;
+    border-radius: 12px;
+    width: 9.5vw;
+    height: 4.5vh;
+    background-color: #C2AA8B;
+}
+
+.categoria p {
+    font-size: 17px;
+    color: white;
+    margin: auto;
+}
+
+.catego {
+    cursor: pointer;
+}
+
+.descricao {
+    margin-top: 20px; /* Espaçamento acima da descrição */
+    padding: 10px; /* Espaçamento interno */
+    max-width: 100%; /* Largura máxima do container */
+    word-wrap: break-word; /* Quebra de palavras longas */
+    overflow-wrap: break-word; /* Quebra de palavras longas (moderno) */
+    white-space: pre-wrap; /* Preserva quebras de linha e espaços */
+    margin-left: 15px;
+}
+
+.descricao h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.descricao p {
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    margin: 0; /* Remove margens padrão */
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    width: 30vw; /* Largura do container2 */
+    margin-top: 37px; /* Espaçamento superior */
+    border-radius: 15px; /* Borda arredondada */
+    background-color: #685648; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.container2 h1 {
+    width: 100%; /* Ocupa toda a largura do container2 */
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Cor do texto */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo do card verticalmente */
+    border-radius: 10px; /* Borda arredondada */
+    overflow: hidden; /* Garante que as bordas arredondadas sejam respeitadas */
+    background-color: #C2AA8B; /* Cor de fundo do card */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.cardImagem {
+    background-color: #faf9e9; /* Cor de fundo da parte da imagem */
+    height: 170px; /* Altura da parte da imagem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem {
+    width: 120px;
+}
+
+.cardConteudo {
+    padding: 15px; /* Espaçamento interno */
+    color: white; /* Cor do texto */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word; /* Quebra palavras longas (moderno) */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+}
+
+.cardConteudo h3 {
+    font-size: 18px; /* Tamanho da fonte do título */
+    margin: 0 0 10px 0; /* Espaçamento abaixo do título */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word; /* Quebra palavras longas (moderno) */
+    max-width: 100%; /* Limita a largura do título */
+}
+
+.cardConteudo p {
+    font-size: 14px; /* Tamanho da fonte da descrição */
+    margin: 0 0 10px 0; /* Espaçamento abaixo da descrição */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word; /* Quebra palavras longas (moderno) */
+    max-width: 100%; /* Limita a largura da descrição */
+}
+
+.verMais {
+    background-color: #685648; /* Cor de fundo do botão */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    color: white; /* Cor do texto */
+    padding: 8px 15px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor pointer */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.verMais:hover {
+    background-color: #92806b; /* Cor de fundo ao passar o mouse */
+}
+
+
+
+
+/* Estilos para o formulário de comentários */
+.formularioComentario {
+    margin-top: -11vh;
+    width: 26vw;
+    margin-bottom: 30px; /* Espaçamento abaixo do formulário */
+    padding: 20px;
+    background-color: #837060; /* Cor de fundo */
+    border-radius: 15px; /* Borda arredondada */
+    display: flex;
+    align-items: center; /* Alinha o input e o ícone verticalmente */
+    gap: 10px; /* Espaçamento entre o input e o ícone */
+    margin-left: 56px;
+    height: auto;
+}
+
+.inputComentario {
+    width: 20vw;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    background-color: #C2AA8B;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    resize: none; /* Impede o usuário de redimensionar manualmente */
+    min-height: 40px; /* Altura mínima */
+    max-height: 120px; /* Altura máxima antes de ativar scroll */
+    outline: none;
+    line-height: 23px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: hidden; /* Esconde a barra de rolagem inicialmente */
+    transition: height 0.2s ease; /* Adiciona uma transição suave */
+}
+
+/* Estilização do placeholder */
+.inputComentario::placeholder {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 23px;
+    padding-left: 10px;
+}
+
+/* Estilo do ícone de enviar */
+.iconeEnviar {
+    background-color: #685648; /* Cor de fundo do ícone */
+    color: white; /* Cor do ícone */
+    border: none; /* Remove a borda */
+    border-radius: 50%; /* Ícone redondo */
+    padding: 10px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor pointer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconeEnviar:hover {
+    background-color: #92806b; /* Cor de fundo ao passar o mouse */
+}
+
+
+
+
+
+
+/* Estilos para a lista de comentários */
+.comentariosContainer {
+    width: 100%; /* Ocupa a largura total */
+    padding: 20px;
+    background-color: #C2AA8B; /* Cor de fundo */
+    border-radius: 15px; /* Borda arredondada */
+}
+
+.listaComentarios h3 {
+    color: white; /* Cor do título */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    font-size: 20px; /* Tamanho da fonte */
+}
+
+.comentario {
+    display: flex;
+    align-items: flex-start; /* Alinha o ícone e o conteúdo ao topo */
+    gap: 10px; /* Espaçamento entre o ícone e o conteúdo */
+    margin-bottom: 15px; /* Espaçamento entre os comentários */
+    padding: 10px;
+    background-color: #685648; /* Cor de fundo do comentário */
+    border-radius: 10px; /* Borda arredondada */
+}
+
+.iconeUsuario {
+    color: white; /* Cor do ícone */
+    flex-shrink: 0; /* Impede que o ícone diminua */
+}
+
+.conteudoComentario {
+    flex: 1; /* Ocupa o espaço restante */
+}
+
+.nomeUsuario {
+    color: white; /* Cor do nome do usuário */
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 5px; /* Espaçamento abaixo do nome */
+}
+
+.textoComentario {
+    color: white; /* Cor do texto do comentário */
+    font-size: 14px; /* Tamanho da fonte */
+    margin: 0; /* Remove margens padrão */
 }

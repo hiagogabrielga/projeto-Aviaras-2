@@ -4,9 +4,14 @@ import Lottie from 'lottie-react';
 import { useRef, useState } from 'react';
 import bookmarkAnimation from '/public/animacao/bookmark.json';
 import Image from 'next/image';
+import { FaCircleUser, FaPaperPlane } from "react-icons/fa6";
 
 
 export default function Mais() {
+    const teste = 'Fulano'
+    const teste2 = 'Fulano2'
+    const catego = 'Infantil'
+
     const lottieRef = useRef();
     const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -23,68 +28,261 @@ export default function Mais() {
         }
     };
 
+
+    const textareaRef = useRef(null);
+
+    const ajustarAltura = () => {
+        const textarea = textareaRef.current;
+        if (textarea) {
+            textarea.style.height = 'auto'; // Redefine a altura para recalcular
+            textarea.style.height = `${Math.min(textarea.scrollHeight, 120)}px`; // Define a altura com base no conteúdo
+        }
+    };
+
     return (
-        <div>
-            <div className={styles.container1}>
-                <div className={styles.parte1}>
-                    <p className={styles.titulo}>Diário da banana</p>
-                    <div onClick={handleClick} style={{ cursor: 'pointer' }}>
-                        <Lottie
-                            lottieRef={lottieRef}
-                            animationData={bookmarkAnimation}
-                            loop={false}
-                            autoplay={false}
-                            style={{ width: 50, height: 50 }}
-                        />
+        <div className={styles.pai}>
+
+
+            <div className={styles.mae}>
+                <div className={styles.container1}>
+                    <div className={styles.parte1}>
+                        <p className={styles.titulo}>Diário da banana</p>
+                        <div onClick={handleClick} style={{ cursor: 'pointer' }}>
+                            <Lottie
+                                lottieRef={lottieRef}
+                                animationData={bookmarkAnimation}
+                                loop={false}
+                                autoplay={false}
+                                style={{ width: 50, height: 50 }}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Container para as imagens menores e a imagem principal */}
+                    <div className={styles.image}>
+                        {/* Container para as 3 imagens menores */}
+                        <div className={styles.imgs}>
+                            <div className={styles.im1}>
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem Principal"
+                                    width={100}
+                                    height={130}
+                                    className={styles.img1}
+                                />
+                            </div>
+                            <div className={styles.im2}>
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem Principal"
+                                    width={100}
+                                    height={130}
+                                    className={styles.img1}
+                                />
+
+                            </div>
+                            <div className={styles.im3}>
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem Principal"
+                                    width={100}
+                                    height={130}
+                                    className={styles.img1}
+                                />
+
+                            </div>
+                        </div>
+
+                        {/* Imagem principal */}
+                        <div className={styles.im_P}>
+                            <Image
+                                src="/images/banana.png"
+                                alt="Imagem Principal"
+                                width={350}
+                                height={500}
+                                className={styles.img_P}
+
+                            />
+                        </div>
+                    </div>
+                    <div className={styles.sobre}>
+                        <div className={styles.autor}>
+                            <FaCircleUser className={styles.perfil} size={63} />
+                            <div className={styles.textos}>
+                                <p className={styles.autor_p}>Autor: {teste}</p>
+                                <div className={styles.obras}>
+                                    <p className={styles.ver_obras}>Ver outras obras</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.postado}>
+                            <FaCircleUser className={styles.perfil} size={63} />
+                            <div className={styles.textos}>
+                                <p className={styles.postado_p}>Postado por: {teste2}</p>
+                                <div className={styles.obras}>
+                                    <p className={styles.ver_obras}>Ver outras obras</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.categoria}>
+                        <p>Categoria: <span className={styles.catego}>{catego.toUpperCase()}</span></p>
+                    </div>
+                    <div className={styles.descricao}>
+                        <h3>Descrição:</h3>
+                        <p>asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </div>
+                </div>
+                <div className={styles.container2}>
+                    <h1>Títulos Semelhantes</h1>
+                    <div className={styles.cards}>
+                        {/* Card 1 */}
+                        <div className={styles.card}>
+                            <div className={styles.cardImagem}>
+                                {/* Espaço para a imagem */}
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem do card"
+                                    width={200}
+                                    height={150}
+                                    className={styles.imagem}
+                                />
+                            </div>
+                            <div className={styles.cardConteudo}>
+                                <h3>Diário da banana</h3>
+                                <p>afsdfsdfsdfsdffsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf...</p>
+                                <button className={styles.verMais}>Ver mais</button>
+                            </div>
+                        </div>
+                        {/* Card 2 */}
+                        <div className={styles.card}>
+                            <div className={styles.cardImagem}>
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem do card"
+                                    width={200}
+                                    height={150}
+                                    className={styles.imagem}
+                                />
+                            </div>
+                            <div className={styles.cardConteudo}>
+                                <h3>Diário da banana</h3>
+                                <p>afsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf...</p>
+                                <button className={styles.verMais}>Ver mais</button>
+                            </div>
+                        </div>
+                        {/* Repita para os outros cards */}
+
+
+                        <div className={styles.card}>
+                            <div className={styles.cardImagem}>
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem do card"
+                                    width={200}
+                                    height={150}
+                                    className={styles.imagem}
+                                />
+                            </div>
+                            <div className={styles.cardConteudo}>
+                                <h3>Diário da banana</h3>
+                                <p>afsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf...</p>
+                                <button className={styles.verMais}>Ver mais</button>
+                            </div>
+                        </div>
+
+
+                        <div className={styles.card}>
+                            <div className={styles.cardImagem}>
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem do card"
+                                    width={200}
+                                    height={150}
+                                    className={styles.imagem}
+                                />
+                            </div>
+                            <div className={styles.cardConteudo}>
+                                <h3>Diário da banana</h3>
+                                <p>afsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf...</p>
+                                <button className={styles.verMais}>Ver mais</button>
+                            </div>
+                        </div>
+
+
+                        <div className={styles.card}>
+                            <div className={styles.cardImagem}>
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem do card"
+                                    width={200}
+                                    height={150}
+                                    className={styles.imagem}
+                                />
+                            </div>
+                            <div className={styles.cardConteudo}>
+                                <h3>Diário da banana</h3>
+                                <p>afsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf...</p>
+                                <button className={styles.verMais}>Ver mais</button>
+                            </div>
+                        </div>
+
+
+
+                        <div className={styles.card}>
+                            <div className={styles.cardImagem}>
+                                <Image
+                                    src="/images/banana.png"
+                                    alt="Imagem do card"
+                                    width={200}
+                                    height={150}
+                                    className={styles.imagem}
+                                />
+                            </div>
+                            <div className={styles.cardConteudo}>
+                                <h3>Diário da banana</h3>
+                                <p>afsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf...</p>
+                                <button className={styles.verMais}>Ver mais</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Container para as imagens menores e a imagem principal */}
-                <div className={styles.image}>
-                    {/* Container para as 3 imagens menores */}
-                    <div className={styles.imgs}>
-                        <div className={styles.im1}>
-                            <Image
-                            src="/images/banana.png"
-                            alt="Imagem Principal"
-                            width={100}
-                            height={130}
-                            className={styles.img1}
-                        />
-                        </div>
-                        <div className={styles.im2}>
-                        <Image
-                            src="/images/banana.png"
-                            alt="Imagem Principal"
-                            width={100}
-                            height={130}
-                            className={styles.img1}
-                        />
+            </div>
 
-                        </div>
-                        <div className={styles.im3}>
-                        <Image
-                            src="/images/banana.png"
-                            alt="Imagem Principal"
-                            width={100}
-                            height={130}
-                            className={styles.img1}
-                        />
 
+
+            <div className={styles.formularioComentario}>
+                <textarea
+                    ref={textareaRef}
+                    className={styles.inputComentario}
+                    placeholder="Escreva um comentário"
+                    onInput={ajustarAltura} // Ajusta a altura ao digitar
+                />
+                <button className={styles.iconeEnviar}>
+                    {/* Ícone de enviar (exemplo usando react-icons) */}
+                    <FaPaperPlane size={18} />
+                </button>
+            </div>
+
+            <div className={styles.comentariosContainer}>
+                <div className={styles.listaComentarios}>
+                    <h3>Comentários:</h3>
+                    <div className={styles.comentario}>
+                        <FaCircleUser size={24} className={styles.iconeUsuario} />
+                        <div className={styles.conteudoComentario}>
+                            <p className={styles.nomeUsuario}>Usuário 1</p>
+                            <p className={styles.textoComentario}>Este é um comentário de exemplo.</p>
                         </div>
                     </div>
-
-                    {/* Imagem principal */}
-                    <div className={styles.im_P}>
-                        <Image
-                            src="/images/banana.png"
-                            alt="Imagem Principal"
-                            width={350}
-                            height={500}
-                            className={styles.img_P}
-                            
-                        />
+                    <div className={styles.comentario}>
+                        <FaCircleUser size={24} className={styles.iconeUsuario} />
+                        <div className={styles.conteudoComentario}>
+                            <p className={styles.nomeUsuario}>Usuário 2</p>
+                            <p className={styles.textoComentario}>Outro comentário de exemplo.</p>
+                        </div>
                     </div>
+                    {/* Adicione mais comentários aqui */}
                 </div>
             </div>
         </div>
