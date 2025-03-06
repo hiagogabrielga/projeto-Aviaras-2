@@ -1,0 +1,143 @@
+/* page.module.css */
+
+.mae {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+  }
+  
+  /* Estilos da segunda parte */
+  .segundaParte {
+    width: 87%;
+    margin: 20px auto; /* Centraliza na página */
+    padding: 20px; /* Espaçamento interno */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Garante 4 colunas */
+    gap: 30px; /* Espaçamento entre os itens */
+  }
+  
+  /* Cada item ocupa uma célula do grid */
+  .divItem {
+    height: 50vh; /* Altura mínima */
+    /*background: linear-gradient(to bottom, #FAF9E9 63%, #837060 50%);  Duas cores */
+    border: 1px solid #837060; /* Borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
+    width: 18vw;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .campoImagem{
+    height: 60%;
+    background-color: var(--creme);
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px;
+  }
+
+  .campoTexto{
+    height: 40%;
+    background-color: var(--marromClaro);
+  }
+  
+  .imgCard {
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+    margin-bottom: 15px; /* Espaço abaixo da imagem */
+    max-height: 100%;
+    object-fit: cover; /* Ajusta a imagem ao tamanho do contêiner sem distorção */
+    margin: 3px auto;
+    
+  }
+  
+  .divItem h3 {
+    padding-top: 10px;
+    margin: 10px 0; /* Espaçamento acima e abaixo do título */
+    margin-left: 5px; /* Alinhamento à esquerda */
+    color: white;
+    font-size: 22px;
+  }
+  
+  .desc {
+    color: white;
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word; /* Quebra palavras longas */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    margin: 10px 0; /* Espaçamento acima e abaixo do parágrafo */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 0 5px; /* Espaçamento interno */
+  }
+  
+  .mais{
+    color: white;
+    font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .titulo{
+    display: flex;
+    font-size: 30px;
+    margin: 20px auto;
+    color: white;
+    background-color: var(--marromClaro);
+    width: 300px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+.menu{
+    position: absolute;
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-right: 10px;
+
+}
+
+.menu svg{
+    cursor: pointer;
+}
+
+
+.opcoes{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    background-color: var(--bege);
+    top: 0;
+    margin-top: 30px;
+    padding: 10px;
+    margin-left: -23px;
+    border-radius: 10px;
+}
+
+.opcoes li{
+    margin: 5px 10px;
+}
+
+.menu:hover .opcoes{
+    display: flex;
+}
+
+.excluir{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
