@@ -1,12 +1,12 @@
 'use client'
 import React from 'react';
-import styles from './meuPerfil.module.css';
+import styles from './listarCategorias.module.css';
 
-export default function MeuPerfil() {
+export default function ListarLivrosPorAutor() {
     return (
         <div className='containerParaHeaderELateralbar'>
             <h2>
-                meu perfil
+                Listar livros por autor
             </h2>
         </div>
     )

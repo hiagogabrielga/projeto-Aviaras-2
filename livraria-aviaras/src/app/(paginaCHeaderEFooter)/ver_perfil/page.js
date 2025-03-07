@@ -2,20 +2,10 @@
 import React from 'react';
 import styles from './verPerfil.module.css';
 
-export default function Home() {
+export default function VerPerfil() {
     return(
         <div className='containerParaHeaderELateralbar'>
-            <div>
-                <div>
-                    autor
-                </div>
-                <div>
-                    outros autores
-                </div>
-            </div>
-            <div>
-                obras
-            </div>
+            <h2>perfil de terceiros</h2>
         </div>
     )
 }
