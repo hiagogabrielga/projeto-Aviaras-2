@@ -10,7 +10,9 @@
   background-color: var(--marromEscuro);
   color:  var(--bege);
 
-  position: relative; /* Adicionado para posicionar elementos filhos absolutos */
+  position: fixed; /* Adicionado para posicionar elementos filhos absolutos */
+  width: 100vw;
+  z-index: 100;
 }
 
 .logo {

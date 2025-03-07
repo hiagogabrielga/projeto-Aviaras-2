@@ -47,3 +47,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button { /* Para Chrome */
 input:focus{
   outline: none;
 }
+
+main{
+  padding-top: 122px;
+}
