@@ -52,7 +52,7 @@ export default function LateralBar() {
                         </Link>
                     </li>
                     <li className={styles.menuLateralItem}>
-                        <Link href='#' className={styles.menuLateralLink}>
+                        <Link href='/meus_comentarios' className={styles.menuLateralLink}>
                             <MessageSquareText size={50} /><p>Meus comentarios</p>
                         </Link>
                     </li>

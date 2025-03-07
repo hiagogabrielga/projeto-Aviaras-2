@@ -1,0 +1,53 @@
+.containerMeusComentarios {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.titulo {
+    display: flex;
+    font-size: 30px;
+    margin: 20px auto;
+    color: white;
+    background-color: var(--marromClaro);
+    width: 340px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.meusComentario{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.containerComentario{
+    display: flex;
+    background-color: var(--bege);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    justify-content: space-around;
+}
+
+.livro{
+    background-color: var(--marromClaro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.comentario{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+    justify-content: space-between;
+}
