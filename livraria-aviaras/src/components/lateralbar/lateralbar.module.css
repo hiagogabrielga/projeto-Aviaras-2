@@ -6,7 +6,7 @@
     background-color: var(--marrom);
     width: 100px;
     position: fixed;
-    transition: all 1.5s;
+    transition: all 2s;
     color: var(--bege);
     justify-content: space-between;
     overflow: hidden;
@@ -45,13 +45,13 @@
     display: flex;
     width: 700px;
     position:absolute;
-    left: 0;
+    left: 10px;
     align-items: center;
 }
 
 .menuLateralLink svg{
     size: 200px;
-    margin-right: 15px;
+    margin-right: 25px;
 }
 
 .menuLateralLink p{

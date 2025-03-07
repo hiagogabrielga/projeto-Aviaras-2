@@ -107,7 +107,7 @@ export default function Home() {
                             <div className={styles.campoTexto}>
                                 <h3>{item.titulo} {index + 1}</h3>
                                 <p className={styles.desc}>{item.descricao}</p>
-                                <p className={styles.mais}> <Link href="./ver_mais"> Ver mais</Link></p>
+                                <p className={styles.mais}> <Link href="/ver_livro"> Ver mais</Link></p>
                             </div>
 
                         </div>

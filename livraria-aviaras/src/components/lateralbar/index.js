@@ -48,18 +48,18 @@ export default function LateralBar() {
                 <ul className={styles.menuLateral}>
                     <li className={styles.menuLateralItem}>
                         <Link href='/meus_livros' className={styles.menuLateralLink}>
-                            <Book size={70} /><p>Meus livros</p>
+                            <Book size={50} /><p>Meus livros</p>
                         </Link>
                     </li>
                     <li className={styles.menuLateralItem}>
                         <Link href='#' className={styles.menuLateralLink}>
-                            <MessageSquareText size={70} /><p>Meus comentarios</p>
+                            <MessageSquareText size={50} /><p>Meus comentarios</p>
                         </Link>
                     </li>
                 </ul>
             </nav>
 
-            <Link href='/login' className={styles.logout}><LogOut size={70} /></Link>
+            <Link href='/login' className={styles.logout}><LogOut size={50} /></Link>
         </div>
     );
 }

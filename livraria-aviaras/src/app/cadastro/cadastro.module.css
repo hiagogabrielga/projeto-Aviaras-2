@@ -141,3 +141,10 @@
         width: 100vw;
     }
 }
+
+.containerButtons{
+    display: flex;
+    width: 90%;
+    align-items: baseline;
+    justify-content: space-between;
+}

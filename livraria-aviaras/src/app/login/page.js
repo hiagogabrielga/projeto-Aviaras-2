@@ -1,6 +1,7 @@
 'use client'
 import styles from "./login.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Importa useRouter
@@ -37,19 +38,23 @@ export default function Login() {
                         <div className={styles.inputGroup}>
                             <label>Senha:</label>
                             <div className={styles.inputGroupPassword}>
-                                <input 
-                                    type={showPassword ? "text" : "password"} 
-                                    placeholder="Digite sua senha" 
-                                    required 
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="Digite sua senha"
+                                    required
                                 />
                                 <button type="button" onClick={() => setShowPassword(!showPassword)}>
                                     {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
                                 </button>
                             </div>
                         </div>
-            
+
                     </div>
-                    <button className={styles.buttonSubmit} type="submit">Realizar login</button>
+                    <div className={styles.containerButtons}>
+                        <Link href="/cadastro">Cadastrar-se</Link>
+                        <button className={styles.buttonSubmit} type="submit">Realizar login</button>
+                    </div>
+
                 </form>
             </div>
         </div>

@@ -37,6 +37,13 @@
     flex-direction: column;
 }
 
+.containerButtons{
+    display: flex;
+    width: 90%;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
 .formContainer{
     background-color: var(--marromEscuro);
     height: 50%;

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Importa useRouter
+import Link from "next/link";
 
 export default function Cadastro() {
     const router = useRouter(); // Inicializa o roteador
@@ -41,10 +42,10 @@ export default function Cadastro() {
                         <div className={styles.inputGroup}>
                             <label>Senha:</label>
                             <div className={styles.inputGroupPassword}>
-                                <input 
-                                    type={showPassword ? "text" : "password"} 
-                                    placeholder="Digite sua senha" 
-                                    required 
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="Digite sua senha"
+                                    required
                                 />
                                 <button type="button" onClick={() => setShowPassword(!showPassword)}>
                                     {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
@@ -54,10 +55,10 @@ export default function Cadastro() {
                         <div className={styles.inputGroup}>
                             <label>Confirme sua senha:</label>
                             <div className={styles.inputGroupPassword}>
-                                <input 
-                                    type={showPasswordConfirm ? "text" : "password"} 
-                                    placeholder="Confirme sua senha" 
-                                    required 
+                                <input
+                                    type={showPasswordConfirm ? "text" : "password"}
+                                    placeholder="Confirme sua senha"
+                                    required
                                 />
                                 <button type="button" onClick={() => setShowPasswordConfirm(!showPasswordConfirm)}>
                                     {showPasswordConfirm ? <Eye size={20} /> : <EyeOff size={20} />}
@@ -65,7 +66,10 @@ export default function Cadastro() {
                             </div>
                         </div>
                     </div>
-                    <button className={styles.buttonSubmit} type="submit">Realizar cadastro</button>
+                    <div className={styles.containerButtons}>
+                        <Link href="/login">Já tenho uma conta</Link>
+                        <button className={styles.buttonSubmit} type="submit">Realizar cadastro</button>
+                    </div>
                 </form>
             </div>
         </div>
