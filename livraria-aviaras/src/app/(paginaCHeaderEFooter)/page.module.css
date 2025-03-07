@@ -190,7 +190,7 @@
 
 /* Estilos da segunda parte */
 .segundaParte {
-  width: 87%;
+  width: 100%;
   margin: 20px auto; /* Centraliza na página */
   padding: 20px; /* Espaçamento interno */
   display: grid;
