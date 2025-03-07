@@ -35,7 +35,7 @@ export default function Mais() {
         const textarea = textareaRef.current;
         if (textarea) {
             textarea.style.height = 'auto'; // Redefine a altura para recalcular
-            textarea.style.height = `${Math.min(textarea.scrollHeight, 120)}px`; // Define a altura com base no conteúdo
+            textarea.style.height = `${Math.min(textarea.scrollHeight, 130)}px`; // Define a altura com base no conteúdo
         }
     };
 
