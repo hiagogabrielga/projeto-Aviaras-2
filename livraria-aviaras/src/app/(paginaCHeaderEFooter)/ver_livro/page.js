@@ -1,16 +1,18 @@
 'use client'
 import styles from './page.module.css';
-import Lottie from 'lottie-react';
 import { useRef, useState } from 'react';
-import bookmarkAnimation from '/public/animacao/bookmark.json';
 import Image from 'next/image';
+import bookmarkAnimation from '/public/animacao/bookmark.json';
 import { FaCircleUser, FaPaperPlane } from "react-icons/fa6";
+import dynamic from 'next/dynamic';
 
+// Importação dinâmica do Lottie para garantir que só seja carregado no cliente
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export default function Mais() {
-    const teste = 'Fulano'
-    const teste2 = 'Fulano2'
-    const catego = 'Infantil'
+    const teste = 'Fulano';
+    const teste2 = 'Fulano2';
+    const catego = 'Infantil';
 
     const lottieRef = useRef();
     const [isBookmarked, setIsBookmarked] = useState(false);
@@ -27,7 +29,6 @@ export default function Mais() {
             setIsBookmarked(!isBookmarked);
         }
     };
-
 
     const textareaRef = useRef(null);
 
@@ -247,40 +248,39 @@ export default function Mais() {
                 </div>
 
             </div>
+            <div className={styles.containerComentarioLivro}>
+                <div className={styles.formularioComentario}>
+                    <textarea
+                        ref={textareaRef}
+                        className={styles.inputComentario}
+                        placeholder="Escreva um comentário"
+                        onInput={ajustarAltura} // Ajusta a altura ao digitar
+                    />
+                    <button className={styles.iconeEnviar}>
+                        {/* Ícone de enviar (exemplo usando react-icons) */}
+                        <FaPaperPlane size={18} />
+                    </button>
+                </div>
 
-
-
-            <div className={styles.formularioComentario}>
-                <textarea
-                    ref={textareaRef}
-                    className={styles.inputComentario}
-                    placeholder="Escreva um comentário"
-                    onInput={ajustarAltura} // Ajusta a altura ao digitar
-                />
-                <button className={styles.iconeEnviar}>
-                    {/* Ícone de enviar (exemplo usando react-icons) */}
-                    <FaPaperPlane size={18} />
-                </button>
-            </div>
-
-            <div className={styles.comentariosContainer}>
-                <div className={styles.listaComentarios}>
-                    <h3>Comentários:</h3>
-                    <div className={styles.comentario}>
-                        <FaCircleUser size={24} className={styles.iconeUsuario} />
-                        <div className={styles.conteudoComentario}>
-                            <p className={styles.nomeUsuario}>Usuário 1</p>
-                            <p className={styles.textoComentario}>Este é um comentário de exemplo.</p>
+                <div className={styles.comentariosContainer}>
+                    <div className={styles.listaComentarios}>
+                        <h3>Comentários:</h3>
+                        <div className={styles.comentario}>
+                            <FaCircleUser size={24} className={styles.iconeUsuario} />
+                            <div className={styles.conteudoComentario}>
+                                <p className={styles.nomeUsuario}>Usuário 1</p>
+                                <p className={styles.textoComentario}>Este é um comentário de exemplo.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.comentario}>
-                        <FaCircleUser size={24} className={styles.iconeUsuario} />
-                        <div className={styles.conteudoComentario}>
-                            <p className={styles.nomeUsuario}>Usuário 2</p>
-                            <p className={styles.textoComentario}>Outro comentário de exemplo.</p>
+                        <div className={styles.comentario}>
+                            <FaCircleUser size={24} className={styles.iconeUsuario} />
+                            <div className={styles.conteudoComentario}>
+                                <p className={styles.nomeUsuario}>Usuário 2</p>
+                                <p className={styles.textoComentario}>Outro comentário de exemplo.</p>
+                            </div>
                         </div>
+                        {/* Adicione mais comentários aqui */}
                     </div>
-                    {/* Adicione mais comentários aqui */}
                 </div>
             </div>
         </div>

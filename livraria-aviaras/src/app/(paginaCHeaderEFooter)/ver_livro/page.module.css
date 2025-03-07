@@ -353,3 +353,7 @@
     font-size: 14px; /* Tamanho da fonte */
     margin: 0; /* Remove margens padrão */
 }
+
+.containerComentarioLivro{
+    width: 90%;
+}
