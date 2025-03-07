@@ -247,6 +247,7 @@
 /* Estilos para o formulário de comentários */
 .formularioComentario {
     margin-top: -11vh;
+    margin-left: 53px;
     width: 26vw;
     margin-bottom: 30px; /* Espaçamento abaixo do formulário */
     padding: 20px;
@@ -275,6 +276,7 @@
     padding-left: 20px;
     padding-right: 20px;
     transition: height 0.2s ease; /* Adiciona uma transição suave */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 /* Estilização do placeholder */
@@ -297,6 +299,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.32) 0px 12px 12px;
 }
 
 .iconeEnviar:hover {
@@ -305,55 +308,57 @@
 
 
 
-
-
-
-/* Estilos para a lista de comentários */
-.comentariosContainer {
-    width: 87%; /* Ocupa a largura total */
-    padding: 20px;
-    background-color: #C2AA8B; /* Cor de fundo */
-    border-radius: 15px; /* Borda arredondada */
+.tex_comen{
+    width: 13%;
+    background-color: #C2AA8B;
+    margin-top: 3vh;
+    color: rgb(0, 0, 0);
+    display: flex;
+    margin-left: 55px;
+    justify-content: center;
+    border-radius: 10px;
 }
 
-.listaComentarios h3 {
-    color: white; /* Cor do título */
-    margin-bottom: 15px; /* Espaçamento abaixo do título */
-    font-size: 20px; /* Tamanho da fonte */
+
+.comentariosContainer {
+    margin-top: 2vh;
+    background-color: #837060;
+    border-radius: 18px;
+    width: 87%;
+    min-height: 25vh;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Mantém 3 colunas */
+    gap: 20px; /* Espaço entre os comentários */
+    margin-left: 55px;
 }
 
 .comentario {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Alinha o ícone e o conteúdo ao topo */
-    gap: 10px; /* Espaçamento entre o ícone e o conteúdo */
-    margin-bottom: 15px; /* Espaçamento entre os comentários */
-    padding: 10px;
-    background-color: #685648; /* Cor de fundo do comentário */
-    border-radius: 10px; /* Borda arredondada */
+    align-items: flex-start;
+    background-color: #C2AA8B;
+    padding: 15px;
+    border-radius: 10px;
+    gap: 10px;
 }
 
 .iconeUsuario {
-    color: white; /* Cor do ícone */
-    flex-shrink: 0; /* Impede que o ícone diminua */
+    font-size: 40px; /* Tamanho do ícone */
+    flex-shrink: 0;
 }
 
 .conteudoComentario {
-    flex: 1; /* Ocupa o espaço restante */
+    flex: 1;
 }
 
 .nomeUsuario {
-    color: white; /* Cor do nome do usuário */
-    font-weight: bold; /* Texto em negrito */
-    margin-bottom: 5px; /* Espaçamento abaixo do nome */
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .textoComentario {
-    color: white; /* Cor do texto do comentário */
-    font-size: 14px; /* Tamanho da fonte */
-    margin: 0; /* Remove margens padrão */
-}
-
-.containerComentarioLivro{
-    width: 90%;
+    color: white;
+    font-size: 14px;
+    margin: 0;
 }
