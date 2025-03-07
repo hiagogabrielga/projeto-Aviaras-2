@@ -1,4 +1,4 @@
-:root{
+:root {
   --creme: #faf9e9;
   --bege: #c2aa8b;
   --marromClaro: #837060;
@@ -17,11 +17,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('/images/livraria.jpg'); /* Caminho correto da imagem */
-  background-size: cover; /* Faz a imagem cobrir todo o fundo */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Evita repetição da imagem */
-  background-attachment: fixed; /* Fixa a imagem ao rolar a página */
+  background-image: url('/images/livraria.jpg');
+  /* Caminho correto da imagem */
+  background-size: cover;
+  /* Faz a imagem cobrir todo o fundo */
+  background-position: center;
+  /* Centraliza a imagem */
+  background-repeat: no-repeat;
+  /* Evita repetição da imagem */
+  background-attachment: fixed;
+  /* Fixa a imagem ao rolar a página */
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,16 +43,35 @@ a {
   text-decoration: none;
 }
 
-input[type="password"]::-ms-reveal,  /* Para Microsoft Edge */
-input[type="password"]::-ms-clear,   /* Para Microsoft Edge */
-input[type="password"]::-webkit-credentials-auto-fill-button { /* Para Chrome */
+input[type="password"]::-ms-reveal,
+/* Para Microsoft Edge */
+input[type="password"]::-ms-clear,
+/* Para Microsoft Edge */
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  /* Para Chrome */
   display: none;
 }
 
-input:focus{
+input:focus {
   outline: none;
 }
 
-main{
-  padding-top: 122px;
+main,
+.bodyDirenciado {
+  flex-grow: 1;
+  /* Faz o main ocupar todo o espaço restante */
+  display: flex;
+  /* Opcional, se precisar organizar elementos internos */
+  flex-direction: column;
+  /* Opcional, se precisar alinhar itens verticalmente */
+}
+
+.containerParaHeaderELateralbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 120px;
+  margin-left: 100px;
 }

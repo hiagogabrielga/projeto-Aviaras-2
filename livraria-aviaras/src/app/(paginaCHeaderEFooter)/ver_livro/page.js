@@ -40,9 +40,7 @@ export default function Mais() {
     };
 
     return (
-        <div className={styles.pai}>
-
-
+        <div className="containerParaHeaderELateralbar">
             <div className={styles.mae}>
                 <div className={styles.container1}>
                     <div className={styles.parte1}>

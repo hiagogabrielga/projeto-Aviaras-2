@@ -4,7 +4,7 @@ import LateralBar from "@/components/lateralbar";
 
 export default function RootLayout({ children }) {
   return (
-    <div>
+    <div className="bodyDirenciado">
       <Header />
       <LateralBar />
       <main>

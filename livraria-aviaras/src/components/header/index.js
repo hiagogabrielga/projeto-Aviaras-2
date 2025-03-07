@@ -17,11 +17,10 @@ export default function Header() {
       </div>
       <nav className={styles.nav}>             
             <div className={styles.favoritos}>
-              <FaBookmark size={30} />
+              <Link href="/meus_favoritos"><FaBookmark size={30} /></Link>
             </div>
             <div className={styles.perfil}>
               <a href="/login"><FaCircleUser size={40} /></a>
-              
             </div>
       </nav>
     </header>
