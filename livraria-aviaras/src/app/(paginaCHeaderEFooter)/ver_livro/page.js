@@ -5,6 +5,7 @@ import Image from 'next/image';
 import bookmarkAnimation from '/public/animacao/bookmark.json';
 import { FaCircleUser, FaPaperPlane } from "react-icons/fa6";
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 // Importação dinâmica do Lottie para garantir que só seja carregado no cliente
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
@@ -123,7 +124,7 @@ export default function Mais() {
                             <div className={styles.textos}>
                                 <p className={styles.autor_p}>Autor: {teste}</p>
                                 <div className={styles.obras}>
-                                    <p className={styles.ver_obras}>Ver outras obras</p>
+                                    <Link href="/ver_autor" className={styles.ver_obras}>Ver outras obras</Link>
                                 </div>
                             </div>
                         </div>
@@ -132,13 +133,13 @@ export default function Mais() {
                             <div className={styles.textos}>
                                 <p className={styles.postado_p}>Postado por: {teste2}</p>
                                 <div className={styles.obras}>
-                                    <p className={styles.ver_obras}>Ver outras obras</p>
+                                    <Link href='/ver_perfil' className={styles.ver_obras}>Ver outras obras</Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className={styles.categoria}>
-                        <p>Categoria: <span className={styles.catego}>{catego.toUpperCase()}</span></p>
+                        <p>Categoria: <span className={styles.catego}> <Link href='/listar_livros_categoria'>{catego.toUpperCase()}</Link></span></p>
                     </div>
                     <div className={styles.descricao}>
                         <h3>Descrição:</h3>
